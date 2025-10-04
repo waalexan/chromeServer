@@ -1,0 +1,10 @@
+services:
+  browserless:
+    image: browserless/chrome:latest
+    container_name: browserless
+    ports:
+      - "3001:3000"   # Porta da API do Browserless
+    environment:
+      - MAX_CONCURRENT_SESSIONS=5
+      - PREBOOT_CHROME=true
+      - CHROME_ARGS=--no-sandbox,--disable-setuid-sandbox
